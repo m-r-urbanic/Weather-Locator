@@ -3,14 +3,39 @@ var city = 'Atlanta';
 var display;
 var weatherData;
 var data;
-var queryURL = "https://api.openweathermap.org/data/2.5/forecast?lat=10&lon=10&appid=" + apiKey;
+var city = 'Dallas'
+
+// get the future forecast of a location
+var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + apiKey;
+
+// get the current weather of a location
+var currentURL = "https://api.openweathermap.org/data/2.5/weather?units=imperial&" + city + "&lat=32.7668&lon=-96.7836&appid=" + apiKey;
 
 
-fetch(queryURL, {
+fetch(forecastURL, {
     method: 'GET',
     headers: {
         'Accept': 'application/json',
     },
 })
-   .then(response => response.json())
-   .then(response => console.log(JSON.stringify(response)))
+.then(function (response) {
+    return response.json();
+})
+.then(function (data) {
+    console.log(data);
+    
+});
+
+fetch(currentURL, {
+    method: 'GET',
+    headers: {
+        'Accept': 'application/json',
+    },
+})
+.then(function (response) {
+    return response.json();
+})
+.then(function (data) {
+    console.log(data);
+    
+});
