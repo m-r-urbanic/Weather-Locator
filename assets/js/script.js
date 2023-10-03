@@ -10,6 +10,7 @@ var timeFour;
 var timeFive;
 var city = 'Dallas';
 
+
 // define all buttons as variables
 var searchBtn = document.querySelector("#search-button");
 var atlBtn = document.querySelector("#atlanta-button");
@@ -68,6 +69,25 @@ var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city +
 
 // get the current weather of a location
 var currentURL = "https://api.openweathermap.org/data/2.5/weather?units=imperial&" + city + "&lat=32.7668&lon=-96.7836&appid=" + apiKey;
+
+var searchBtn = document.querySelector("#search-button");
+var atlBtn = document.querySelector("#atlanta-button");
+var denBtn = document.querySelector("#denver-button");
+var seaBtn = document.querySelector("#seattle-button");
+var sanBtn = document.querySelector("#san-fransico-button");
+var orlBtn = document.querySelector("#orlando-button");
+var nyBtn = document.querySelector("#new-york-button");
+var chiBtn = document.querySelector("#chicago-button");
+var ausBtn = document.querySelector("#austin-button");
+
+function setAtl(){
+ city = 'Atlanta'
+}
+
+//
+atlBtn.addEventListener("click", setAtl);
+console.log(city);
+
 
 // get the url for the forcast, this is used for the five future weather sections
 fetch(forecastURL, {
