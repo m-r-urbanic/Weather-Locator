@@ -46,14 +46,11 @@ var tempFive = document.getElementById("temp-5");
 var windFive = document.getElementById("wind-5");
 var humidityFive = document.getElementById("humidity-5");
 
-
-
 // get the future forecast of a location
-var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + apiKey;
+var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + apiKey + "units=imperial";
 
 // get the current weather of a location
 var currentURL = "https://api.openweathermap.org/data/2.5/weather?units=imperial&" + city + "&lat=32.7668&lon=-96.7836&appid=" + apiKey;
-
 
 fetch(forecastURL, {
     method: 'GET',
