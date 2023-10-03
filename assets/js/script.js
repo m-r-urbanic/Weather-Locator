@@ -10,36 +10,53 @@ var timeFour;
 var timeFive;
 var city = 'Dallas';
 
+// define all buttons as variables
+var searchBtn = document.querySelector("#search-button");
+var atlBtn = document.querySelector("#atlanta-button");
+var denBtn = document.querySelector("#denver-button");
+var seaBtn = document.querySelector("#seattle-button");
+var sanBtn = document.querySelector("#san-fransico-button");
+var orlBtn = document.querySelector("#orlando-button");
+var nyBtn = document.querySelector("#new-york-button");
+var chiBtn = document.querySelector("#chicago-button");
+var ausBtn = document.querySelector("#austin-button");
+
+// define the top section variables
 var locationDate = document.getElementById("location-date");
 var currentImg = document.getElementById("img-current");
 var currentTemp = document.getElementById("temp-current");
 var currentWind = document.getElementById("wind-current");
 var currentHumidity = document.getElementById("humidity-current");
 
+// day 1 variables
 var dayOne = document.getElementById("date-1");
 var imgOne = document.getElementById("img-1");
 var tempOne = document.getElementById("temp-1");
 var windOne = document.getElementById("wind-1");
 var humidityOne = document.getElementById("humidity-1");
 
+// day 2 variables
 var dayTwo = document.getElementById("date-2");
 var imgTwo = document.getElementById("img-2");
 var tempTwo = document.getElementById("temp-2");
 var windTwo = document.getElementById("wind-2");
 var humidityTwo = document.getElementById("humidity-2");
 
+// day 3 variables
 var dayThree = document.getElementById("date-3");
 var imgThree = document.getElementById("img-3");
 var tempThree = document.getElementById("temp-3");
 var windThree = document.getElementById("wind-3");
 var humidityThree = document.getElementById("humidity-3");
 
+// day 4 variables
 var dayFour = document.getElementById("date-4");
 var imgFour = document.getElementById("img-4");
 var tempFour = document.getElementById("temp-4");
 var windFour = document.getElementById("wind-4");
 var humidityFour = document.getElementById("humidity-4");
 
+// day 5 variables
 var dayFive = document.getElementById("date-5");
 var imgFive = document.getElementById("img-5");
 var tempFive = document.getElementById("temp-5");
@@ -52,6 +69,7 @@ var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city +
 // get the current weather of a location
 var currentURL = "https://api.openweathermap.org/data/2.5/weather?units=imperial&" + city + "&lat=32.7668&lon=-96.7836&appid=" + apiKey;
 
+// get the url for the forcast, this is used for the five future weather sections
 fetch(forecastURL, {
     method: 'GET',
     headers: {
