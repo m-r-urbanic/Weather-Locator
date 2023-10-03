@@ -1,9 +1,22 @@
 var apiKey = 'c6131f59ee081d22e22aae67aa4ed7ac';
-var city = 'Atlanta';
 var display;
 var weatherData;
 var data;
-var city = 'Dallas'
+var currentTime;
+var timeOne;
+var timeTwo;
+var timeThree;
+var timeFour;
+var timeFive;
+var city = 'Dallas';
+
+var locationDate = document.getElementById("location-date");
+var currentImg = document.getElementById("img-current");
+var currentTemp = document.getElementById("temp-current");
+var currentWind = document.getElementById("wind-current");
+var currentHumidity = document.getElementById("humidity-current");
+
+
 
 // get the future forecast of a location
 var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + apiKey;
@@ -36,6 +49,14 @@ fetch(currentURL, {
     return response.json();
 })
 .then(function (data) {
-    console.log(data);
-    
+    weatherData = data
+    console.log(weatherData);
+    locationDate.textContent = weatherData.name;
+    currentImg.textContent = weatherData.name;
+
 });
+
+var currentImg = document.getElementById("current-img");
+var currentTemp = document.getElementById("current-temp");
+var currentWind = document.getElementById("current-wind");
+var currentHumidity = document.getElementById("current-humidity");
